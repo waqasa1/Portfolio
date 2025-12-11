@@ -163,6 +163,17 @@ const workExperiences = {
         "Used Git for version control and team collaboration.",
         "Explored different libraries such as Mui, Gsap, Framer-Motion etc"
       ]
+    },{
+      role: "Mern Developer",
+      company: "Web Write",
+      companylogo: require("./assets/images/webwrite.jpeg"),
+      date: "Nov 2025 – Present",
+      desc: "Worked on backend development for webWrite",
+      descBullets: [
+        "Created Ecommerce site with analytics in collab with frontend dev",
+        "Used Git for version control and team collaboration.",
+        "Practiced security concern and deployed to render"
+      ]
     },
   ]
 };
@@ -178,34 +189,34 @@ const openSource = {
 // Some big projects you have worked on
 
 const bigProjects = {
-  title: "Big Projects",
-  subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
+  title: "Projects",
+  subtitle: "Personal and Work projects",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/asaanqurbanilogoo.png"),
+      projectName: "AsaanQurbani",
+      projectDesc: "A site to showcase goats/animals for selling purpose with admin dashboard analytics crud.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "http://saayahealth.com/"
+          url: "https://asaan-qurbani.vercel.app/"
         }
         //  you can add extra buttons here.
       ]
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/prodcat.jpeg"),
+      projectName: "ProductCatalog",
+      projectDesc: "An Ecommerce site with user,seller and superadmin side with stock management and analytics.",
       footerLink: [
         {
           name: "Visit Website",
-          url: "http://nextu.se/"
+          url: "https://product-catalog-ybcr.onrender.com/"
         }
       ]
     }
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: true // Set false to hide this section, defaults to true
 };
 
 // Achievement Section
@@ -221,7 +232,7 @@ const achievementSection = {
       title: "Google Code-In Finalist",
       subtitle:
         "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
-      image: require("./assets/images/codeInLogo.webp"),
+      image: require("./assets/images/contactMailDark.svg"),
       imageAlt: "Google Code-In Logo",
       footerLink: [
         {
