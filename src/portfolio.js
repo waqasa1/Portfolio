@@ -26,7 +26,7 @@ const greeting = {
     "A passionate Software Developer 🚀 having an experience of building Web applications with JavaScript / Reactjs / Nodejs and some other cool libraries and frameworks."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1dfCs4tufapitECkUCLID4fG-Ch1EhC2B/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1Xo8Gj8lIRPQWlyZbLbH3vLpt-2iGGty6/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -86,6 +86,10 @@ https://fontawesome.com/icons?d=gallery */
     },
     {
       skillName: "sql-database",
+      fontAwesomeClassname: "fas fa-database"
+    },
+    {
+      skillName: "mongodb",
       fontAwesomeClassname: "fas fa-database"
     },
     {
@@ -163,7 +167,7 @@ const workExperiences = {
         "Used Git for version control and team collaboration.",
         "Explored different libraries such as Mui, Gsap, Framer-Motion etc"
       ]
-    },{
+    }, {
       role: "Mern Developer",
       company: "Web Write",
       companylogo: require("./assets/images/webwrite.jpeg"),
@@ -269,7 +273,7 @@ const achievementSection = {
       image: require("./assets/images/pwaLogo.webp"),
       imageAlt: "PWA Logo",
       footerLink: [
-        {name: "Certification", url: ""},
+        { name: "Certification", url: "" },
         {
           name: "Final Project",
           url: "https://pakistan-olx-1.firebaseapp.com/"
