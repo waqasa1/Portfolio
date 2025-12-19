@@ -45,7 +45,12 @@
 .greeting-text {
   font-size: 70px;
   line-height: 1.1;
-  color: $textColor !important;
+  color: $textColor; // ✅ REMOVED !important
+  
+  // ✅ ADDED dark mode support
+  &.dark-mode {
+    color: $textColorDark;
+  }
 }
 
 .greeting-text-p {

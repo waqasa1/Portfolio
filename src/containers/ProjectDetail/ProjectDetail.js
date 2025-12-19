@@ -13,7 +13,7 @@ export default function ProjectDetail() {
 
   // Scroll to top when component mounts
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   // Find the project by converting projectName to URL-friendly format
@@ -23,7 +23,7 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className={isDark ? "dark-mode main" : "main"}>
+      <div className={isDark ? "dark-mode" : ""}>
         <div className="error-page">
           <h1 className={isDark ? "dark-mode" : ""}>Project Not Found</h1>
           <button 
@@ -50,7 +50,7 @@ export default function ProjectDetail() {
 
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className={isDark ? "dark-mode main" : "main"}>
+      <div className={isDark ? "dark-mode" : ""}>
         <div className="project-detail-container">
           {/* Back Button */}
           <button

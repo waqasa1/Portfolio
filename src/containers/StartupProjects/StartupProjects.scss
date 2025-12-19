@@ -1,25 +1,16 @@
 @import "../../_globalColor";
 
-.card-image {
-  max-width: 100%;
-  height: auto;
-  width: 250px;
+/* ----------------- Grid Container ----------------- */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
 }
 
-.card-title {
-  color: $titleColor;
-  font-size: 22px;
-  line-height: 24px;
-  font-weight: 700;
-  margin: 15px 0 0 0;
-}
-
-.card-subtitle {
-  color: $cardSubtitle;
-  font-size: 17px;
-  line-height: 1.5rem;
-}
-
+/* ----------------- Project Card ----------------- */
 .project-card {
   display: flex;
   flex-direction: column;
@@ -28,34 +19,33 @@
   border-radius: 10px;
   border: 1px solid $lightBorder1;
   justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .project-card-light {
   box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 .project-card-dark {
+  background-color: $darkBackground;
   box-shadow: 0px 10px 30px -15px $darkBoxShadow;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.25s ease;
 }
 
-.project-detail {
-  text-align: center;
+.project-card:hover,
+.clickable-card:hover {
+  transform: translateY(-8px);
 }
 
 .project-card-light:hover {
-  box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+  box-shadow: $lightBoxShadowDark 0px 20px 40px -10px;
 }
 
 .project-card-dark:hover {
-  box-shadow: 0px 20px 30px -10px $darkBoxShadow;
+  box-shadow: 0px 20px 40px -10px $darkBoxShadow;
 }
 
+/* ----------------- Project Image ----------------- */
 .project-image {
   position: relative;
   height: 250px;
@@ -63,16 +53,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(280px, 1fr));
-  gap: 30px;
-  justify-content: center; /* centers incomplete last row */
+.card-image {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
+/* ----------------- Project Details ----------------- */
+.project-detail {
+  text-align: center;
+}
 
+.card-title {
+  color: $titleColor;
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 700;
+  margin: 10px 0 5px 0;
+}
+
+.card-subtitle {
+  color: $cardSubtitle;
+  font-size: 17px;
+  line-height: 1.5rem;
+  margin: 0;
+}
+
+/* ----------------- Project Footer Links ----------------- */
 .project-card-footer {
   display: flex;
   flex-wrap: wrap;
@@ -82,19 +95,17 @@
   span.project-tag {
     background: $buttonColor;
     color: $lightBackground3;
-    vertical-align: middle;
-    align-items: center;
     border-radius: 4px;
     display: inline-flex;
     font-size: 0.75rem;
     height: 2em;
+    align-items: center;
     justify-content: center;
     white-space: nowrap;
     line-height: 1.5;
-    margin: 0 0.5rem 0.5rem 0;
     padding: 0 0.75em;
     cursor: pointer;
-    transition: 0.2s ease-in;
+    transition: all 0.2s ease-in;
 
     &:hover {
       background: $buttonHover;
@@ -107,7 +118,7 @@
     font-weight: 700;
     position: relative;
     overflow: hidden;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -128,38 +139,90 @@
       }
     }
   }
+}
 
-  .dark-mode.detail-tag {
-    background: linear-gradient(135deg, $buttonColor 0%, $buttonHover 100%);
+/* ----------------- Dark Mode Overrides ----------------- */
+.dark-mode {
+  &.card-title {
     color: $textColorDark;
+  }
 
+  &.card-subtitle {
+    color: $textColorDark;
+  }
+
+  .project-card-dark {
+    background-color: $darkBackground;
+    box-shadow: 0px 10px 30px -15px $darkBoxShadow;
+  }
+
+  .detail-tag {
+    color: $textColorDark;
     &:hover {
       box-shadow: 0 4px 15px rgba($buttonHover, 0.6);
     }
   }
 }
 
-// Make cards clickable with enhanced hover effect
-.clickable-card {
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: translateY(-8px);
+/* ----------------- Responsive ----------------- */
+@media (max-width: 1024px) {
+  .projects-container {
+    gap: 20px;
   }
 
-  &.project-card-light:hover {
-    box-shadow: $lightBoxShadowDark 0px 20px 40px -10px;
-  }
-
-  &.project-card-dark:hover {
-    box-shadow: 0px 20px 40px -10px $darkBoxShadow;
+  .project-image {
+    height: 220px;
   }
 }
 
 @media (max-width: 768px) {
-  .project-subtitle {
-    font-size: 16px;
-    text-align: center;
+  .projects-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
+
+  .card-subtitle {
+    font-size: 15px;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .project-card {
+    padding: 0.8rem;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-subtitle {
+    font-size: 14px;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .project-card-footer span.project-tag {
+    font-size: 0.65rem;
+    height: 1.8em;
+    padding: 0 0.5em;
   }
 }

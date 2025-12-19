@@ -1,17 +1,9 @@
 @import "../../_globalColor";
 
-/* ProjectDetail.scss */
-.project-detail-page {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-
-
 .project-detail-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 20px 40px;
+  padding: 100px 20px 40px; // ✅ Increased top padding for header clearance
   font-family: "Montserrat", sans-serif;
 
   .back-button {
@@ -259,16 +251,16 @@
       h2 {
         font-size: 24px;
         margin: 0 0 20px 0;
-        color: white;
+        color: $titleColor;
         font-weight: 700;
         border-bottom: 3px solid $buttonColor;
         padding-bottom: 10px;
-        font-family: "Montserrat", sans-serif; // <-- changed from Agustina
+        font-family: "Agustina Regular", sans-serif;
+      }
 
-        &.dark-mode {
-          color: $textColorDark;
-          border-bottom-color: $buttonHover;
-        }
+      &.dark-mode h2 {
+        color: $textColorDark;
+        border-bottom-color: $buttonHover;
       }
 
       p {

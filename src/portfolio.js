@@ -119,7 +119,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "Bahria University",
-      logo: require("./assets/images/bu_logo.png"),
+      logo: require("./assets/images/bu_logo.webp"),
       subHeader: "Bachelors of Science in Computer Science",
       duration: "September 2020 - July 2024",
       desc: "Took courses about Software Engineering, Web Security, Operating Systems, ...",
@@ -159,7 +159,7 @@ const workExperiences = {
     {
       role: "React Developer",
       company: "Rocco Live",
-      companylogo: require("./assets/images/rocco.jpeg"),
+      companylogo: require("./assets/images/rocco.webp"),
       date: "May 2025 – July 2025",
       desc: "Worked on frontend development for Rocco Live, a live streaming app",
       descBullets: [
@@ -170,7 +170,7 @@ const workExperiences = {
     }, {
       role: "Mern Developer",
       company: "Web Write",
-      companylogo: require("./assets/images/webwrite.jpeg"),
+      companylogo: require("./assets/images/webwrite.webp"),
       date: "Nov 2025 – Present",
       desc: "Worked on backend development for webWrite",
       descBullets: [
@@ -197,14 +197,14 @@ const bigProjects = {
   subtitle: "Personal and Work projects",
   projects: [
     {
-      image: require("./assets/images/asaanqurbanilogoo.png"),
+      image: require("./assets/images/asaanqurbanilogoo.webp"),
       projectName: "AsaanQurbani",
       projectDesc: "A site to showcase goats/animals for selling purpose with admin dashboard analytics crud.",
       detailedDesc: "AsaanQurbani is a comprehensive platform designed to streamline the process of buying and selling animals for Qurbani. The platform features a modern admin dashboard with real-time analytics, CRUD operations for managing listings, and a user-friendly interface for buyers to browse available animals.",
       screenshots: [
-        require("./assets/images/projects/asaanqurbani/screenshot1.png"),
-        require("./assets/images/projects/asaanqurbani/screenshot2.png"),
-        require("./assets/images/projects/asaanqurbani/screenshot3.png"),
+        require("./assets/images/projects/asaanqurbani/screenshot1.webp"),
+        require("./assets/images/projects/asaanqurbani/screenshot2.webp"),
+        require("./assets/images/projects/asaanqurbani/screenshot3.webp"),
       ],
       techStack: ["Next.js", "Serverless Functions", "MongoDB"],
       features: [
@@ -225,20 +225,20 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/productcat.png"),
+      image: require("./assets/images/productcat.webp"),
       projectName: "ProductCatalog",
       projectDesc: "An Ecommerce site with user,seller and superadmin side with stock management and analytics.",
       detailedDesc: "ProductCatalog is a full-featured e-commerce platform with three distinct user roles. It provides comprehensive stock management, sales analytics, and a seamless shopping experience. The platform includes seller tools for managing inventory and a super admin panel for overseeing the entire marketplace.",
       screenshots: [
-        require("./assets/images/projects/productcatalog/screenshot1.png"),
-        require("./assets/images/projects/productcatalog/screenshot2.png"),
-        require("./assets/images/projects/productcatalog/screenshot3.png"),
-        require("./assets/images/projects/productcatalog/screenshot4.png"),
-        require("./assets/images/projects/productcatalog/screenshot5.png"),
-        require("./assets/images/projects/productcatalog/screenshot6.png"),
-        require("./assets/images/projects/productcatalog/screenshot7.png"),
-        require("./assets/images/projects/productcatalog/screenshot8.png"),
-        require("./assets/images/projects/productcatalog/screenshot9.png"),
+        require("./assets/images/projects/productcatalog/screenshot1.webp"),
+        require("./assets/images/projects/productcatalog/screenshot2.webp"),
+        require("./assets/images/projects/productcatalog/screenshot3.webp"),
+        require("./assets/images/projects/productcatalog/screenshot4.webp"),
+        require("./assets/images/projects/productcatalog/screenshot5.webp"),
+        require("./assets/images/projects/productcatalog/screenshot6.webp"),
+        require("./assets/images/projects/productcatalog/screenshot7.webp"),
+        require("./assets/images/projects/productcatalog/screenshot8.webp"),
+        require("./assets/images/projects/productcatalog/screenshot9.webp"),
       ],
       techStack: ["MERN Stack", "Redux", "JWT", "Render"],
       features: [
@@ -259,15 +259,15 @@ const bigProjects = {
       ]
     },
     {
-      image: require("./assets/images/gsap-practice.png"),
+      image: require("./assets/images/gsap-practice.webp"),
       projectName: "Live Streaming Practice",
       projectDesc: "A creative GSAP practice project with custom animations and scroll interactions.",
       detailedDesc:
         "This project was built from scratch to experiment with GSAP animations and scroll-triggered interactions. The site is fully responsive and demonstrates creative layout design without relying on Figma or pre-made designs. It showcases dynamic animations, interactive elements, and smooth transitions.",
       screenshots: [
-        require("./assets/images/projects/gsappractice/screenshot1.png"),
-        require("./assets/images/projects/gsappractice/screenshot2.png"),
-        require("./assets/images/projects/gsappractice/screenshot3.png"),
+        require("./assets/images/projects/gsappractice/screenshot1.webp"),
+        require("./assets/images/projects/gsappractice/screenshot2.webp"),
+        require("./assets/images/projects/gsappractice/screenshot3.webp"),
       ],
       techStack: ["React.js", "GSAP", "CSS3", "Responsive Design"],
       features: [
@@ -288,16 +288,16 @@ const bigProjects = {
       ],
     },
     {
-      image: require("./assets/images/technologia.png"), // replace with actual image path
+      image: require("./assets/images/technologia.webp"), // replace with actual image path
       projectName: "Technologia Replica",
       projectDesc:
         "A React-based replica of the Envato premium WordPress theme Technologia and digital otters, built collaboratively using Git and GitHub.",
       detailedDesc:
         "This project is a front-end replica of the premium Envato WordPress theme 'Technologia', recreated using React. The goal was to closely match the original design while translating a WordPress theme into a modern component-based React architecture. The project was developed collaboratively using GitHub, focusing on clean UI structure, reusable components, and smooth scroll-based animations powered by AOS.",
       screenshots: [
-        require("./assets/images/projects/technologia/screenshot1.png"),
-        require("./assets/images/projects/technologia/screenshot2.png"),
-        require("./assets/images/projects/technologia/screenshot3.png"),
+        require("./assets/images/projects/technologia/screenshot1.webp"),
+        require("./assets/images/projects/technologia/screenshot2.webp"),
+        require("./assets/images/projects/technologia/screenshot3.webp"),
       ],
       techStack: ["React.js", "AOS Animations", "SCSS", "Git", "GitHub"],
       features: [
@@ -319,16 +319,16 @@ const bigProjects = {
       ],
     },
     {
-      image: require("./assets/images/dashboard-practice.png"), // replace with actual image
+      image: require("./assets/images/dashboard-practice.webp"), // replace with actual image
       projectName: "React Dashboard Practice",
       projectDesc:
         "A React-based dashboard built for practice, focusing on layout structure, data visualization, and component composition.",
       detailedDesc:
         "This dashboard project was created as a hands-on React practice to understand dashboard layouts, reusable components, and data presentation patterns commonly used in admin panels. The focus was on building a clean and functional interface rather than responsiveness. It includes structured sections, cards, charts, and UI elements typically found in real-world dashboards.",
       screenshots: [
-        require("./assets/images/projects/dashboardpractice/screenshot1.png"),
-        require("./assets/images/projects/dashboardpractice/screenshot2.png"),
-        require("./assets/images/projects/dashboardpractice/screenshot3.png"),
+        require("./assets/images/projects/dashboardpractice/screenshot1.webp"),
+        require("./assets/images/projects/dashboardpractice/screenshot2.webp"),
+        require("./assets/images/projects/dashboardpractice/screenshot3.webp"),
       ],
       techStack: ["React.js", "JavaScript", "CSS", "Component Architecture"],
       features: [
