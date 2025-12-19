@@ -1,0 +1,430 @@
+@import "../../_globalColor";
+
+/* ProjectDetail.scss */
+.project-detail-page {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+
+
+.project-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px 40px;
+  font-family: "Montserrat", sans-serif;
+
+  .back-button {
+    background: transparent;
+    border: 2px solid $lightBorder1;
+    color: $textColor;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+
+    &:hover {
+      background: $buttonColor;
+      color: $lightBackground3;
+      border-color: $buttonColor;
+      transform: translateX(-5px);
+    }
+
+    &.dark-mode {
+      border-color: $darkBoxShadow;
+      color: $textColorDark;
+
+      &:hover {
+        background: $buttonHover;
+        color: $textColorDark;
+        border-color: $buttonHover;
+      }
+    }
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .project-title-section {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex: 1;
+
+      .project-logo {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        border-radius: 10px;
+        box-shadow: $lightBoxShadowDark 0px 10px 20px -10px;
+      }
+
+      h1 {
+        font-size: 36px;
+        margin: 0 0 10px 0;
+        color: $titleColor;
+        font-weight: 700;
+        font-family: "Agustina Regular", sans-serif;
+
+        &.dark-mode {
+          color: $textColorDark;
+        }
+      }
+
+      .project-tagline {
+        font-size: 17px;
+        color: $subTitle;
+        margin: 0;
+        line-height: 1.5rem;
+
+        &.dark-mode {
+          color: $subTitle;
+        }
+      }
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+
+      .btn-primary {
+        background: $buttonColor;
+        color: $lightBackground3;
+        padding: 12px 24px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background: $buttonHover;
+          transform: translateY(-2px);
+          box-shadow: $lightBoxShadowDark 0px 10px 20px -5px;
+        }
+
+        &.dark-mode {
+          background: $buttonColor;
+          color: $textColorDark;
+
+          &:hover {
+            background: $buttonHover;
+            box-shadow: 0px 10px 20px -5px $darkBoxShadow;
+          }
+        }
+      }
+    }
+  }
+
+  .screenshot-gallery {
+    margin-bottom: 50px;
+    background: $lightBackground2;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid $lightBorder1;
+    box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
+
+    &.dark-mode {
+      background: $darkBackground;
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0px 10px 30px -15px $darkBoxShadow;
+    }
+
+    .main-screenshot {
+      margin-bottom: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: $lightBoxShadowDarker 0px 8px 25px -10px;
+      border: 1px solid $lightBorder1;
+
+      &.dark-mode {
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 8px 25px -10px $darkBoxShadow;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+
+    .thumbnail-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+
+      .thumbnail {
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 3px solid transparent;
+        transition: all 0.3s ease;
+        position: relative;
+        box-shadow: $lightBoxShadow 0px 5px 15px -5px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.3);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+
+        &.active {
+          border-color: $buttonColor;
+          box-shadow: 0 0 0 2px $buttonColor;
+
+          &::after {
+            opacity: 0;
+          }
+        }
+
+        &.dark-mode {
+          border-color: transparent;
+          box-shadow: 0px 5px 15px -5px $darkBoxShadow;
+
+          &.active {
+            border-color: $buttonHover;
+            box-shadow: 0 0 0 2px $buttonHover;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100px;
+          object-fit: cover;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .detail-card {
+      background: $lightBackground2;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid $lightBorder1;
+      box-shadow: $lightBoxShadowDark 0px 10px 30px -15px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: $lightBoxShadowDark 0px 20px 30px -10px;
+      }
+
+      &.dark-mode {
+        background: $darkBackground;
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 10px 30px -15px $darkBoxShadow;
+
+        &:hover {
+          box-shadow: 0px 20px 30px -10px $darkBoxShadow;
+        }
+      }
+
+      h2 {
+        font-size: 24px;
+        margin: 0 0 20px 0;
+        color: white;
+        font-weight: 700;
+        border-bottom: 3px solid $buttonColor;
+        padding-bottom: 10px;
+        font-family: "Montserrat", sans-serif; // <-- changed from Agustina
+
+        &.dark-mode {
+          color: $textColorDark;
+          border-bottom-color: $buttonHover;
+        }
+      }
+
+      p {
+        font-size: 17px;
+        line-height: 1.5rem;
+        color: $cardSubtitle;
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      &.dark-mode p {
+        color: $subTitle;
+      }
+
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .tech-tag {
+          background: $buttonColor;
+          color: $lightBackground3;
+          padding: 8px 16px;
+          border-radius: 4px;
+          font-size: 14px;
+          font-weight: 600;
+          transition: all 0.2s ease-in;
+
+          &:hover {
+            background: $buttonHover;
+            transform: scale(1.05);
+          }
+
+          &.dark-mode {
+            background: $buttonColor;
+            color: $textColorDark;
+
+            &:hover {
+              background: $buttonHover;
+            }
+          }
+        }
+      }
+
+      .features-list {
+        margin: 0;
+        padding-left: 20px;
+
+        li {
+          font-size: 17px;
+          line-height: 1.8;
+          color: $cardSubtitle;
+          margin-bottom: 10px;
+          position: relative;
+
+          &::marker {
+            color: $buttonColor;
+            font-size: 20px;
+          }
+        }
+      }
+
+      &.dark-mode .features-list li {
+        color: $subTitle;
+
+        &::marker {
+          color: $buttonHover;
+        }
+      }
+    }
+  }
+
+  .error-page {
+    text-align: center;
+    padding: 100px 20px;
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+      color: $titleColor;
+      font-family: "Agustina Regular", sans-serif;
+    }
+
+    &.dark-mode h1 {
+      color: $textColorDark;
+    }
+
+    .error-button {
+      background: $buttonColor;
+      color: $lightBackground3;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: "Montserrat", sans-serif;
+
+      &:hover {
+        background: $buttonHover;
+        transform: translateY(-2px);
+        box-shadow: $lightBoxShadowDark 0px 10px 20px -5px;
+      }
+
+      &.dark-mode {
+        color: $textColorDark;
+
+        &:hover {
+          box-shadow: 0px 10px 20px -5px $darkBoxShadow;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .project-detail-container {
+    padding: 60px 15px 30px;
+
+    .project-header {
+      .project-title-section {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+
+        h1 {
+          font-size: 28px;
+        }
+
+        .project-tagline {
+          font-size: 16px;
+        }
+      }
+
+      .action-buttons {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .screenshot-gallery {
+      padding: 20px;
+
+      .thumbnail-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+        .thumbnail img {
+          height: 70px;
+        }
+      }
+    }
+
+    .details-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

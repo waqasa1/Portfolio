@@ -1,10 +1,14 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import "./StartupProjects.scss";
-import {bigProjects} from "../../portfolio";
-import {Fade} from "react-reveal";
+import { bigProjects } from "../../portfolio";
+import { Fade } from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
 
 export default function StartupProject() {
+  const navigate = useNavigate();
+  const { isDark } = useContext(StyleContext);
+
   function openUrlInNewTab(url) {
     if (!url) {
       return;
@@ -13,10 +17,20 @@ export default function StartupProject() {
     win.focus();
   }
 
-  const {isDark} = useContext(StyleContext);
+  function handleCardClick(project, e) {
+    // Prevent navigation if clicking on footer links
+    if (e.target.closest(".project-card-footer")) {
+      return;
+    }
+    // Navigate to detail page
+    const projectId = project.projectName.toLowerCase().replace(/\s+/g, "");
+    navigate(`/project/${projectId}`);
+  }
+
   if (!bigProjects.display) {
     return null;
   }
+
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="projects">
@@ -39,9 +53,10 @@ export default function StartupProject() {
                   key={i}
                   className={
                     isDark
-                      ? "dark-mode project-card project-card-dark"
-                      : "project-card project-card-light"
+                      ? "dark-mode project-card project-card-dark clickable-card"
+                      : "project-card project-card-light clickable-card"
                   }
+                  onClick={(e) => handleCardClick(project, e)}
                 >
                   {project.image ? (
                     <div className="project-image">
@@ -68,13 +83,37 @@ export default function StartupProject() {
                     {project.footerLink ? (
                       <div className="project-card-footer">
                         {project.footerLink.map((link, i) => {
+                          // External links → open in new tab
+                          if (!link.url.startsWith("/")) {
+                            return (
+                              <span
+                                key={i}
+                                className={isDark ? "dark-mode project-tag" : "project-tag"}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  openUrlInNewTab(link.url);
+                                }}
+                              >
+                                {link.name}
+                              </span>
+                            );
+                          }
+
+                          // Internal link (View Details) → navigate internally
+                          const internalProjectId = link.url.split("/").pop(); // extracts "asaanqurbani"
                           return (
                             <span
                               key={i}
                               className={
-                                isDark ? "dark-mode project-tag" : "project-tag"
+                                isDark
+                                  ? "dark-mode project-tag detail-tag"
+                                  : "project-tag detail-tag"
                               }
-                              onClick={() => openUrlInNewTab(link.url)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                navigate(`/project/${internalProjectId}`);
+                              }}
+                              style={{ cursor: "pointer" }}
                             >
                               {link.name}
                             </span>

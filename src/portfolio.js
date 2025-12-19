@@ -200,28 +200,160 @@ const bigProjects = {
       image: require("./assets/images/asaanqurbanilogoo.png"),
       projectName: "AsaanQurbani",
       projectDesc: "A site to showcase goats/animals for selling purpose with admin dashboard analytics crud.",
+      detailedDesc: "AsaanQurbani is a comprehensive platform designed to streamline the process of buying and selling animals for Qurbani. The platform features a modern admin dashboard with real-time analytics, CRUD operations for managing listings, and a user-friendly interface for buyers to browse available animals.",
+      screenshots: [
+        require("./assets/images/projects/asaanqurbani/screenshot1.png"),
+        require("./assets/images/projects/asaanqurbani/screenshot2.png"),
+        require("./assets/images/projects/asaanqurbani/screenshot3.png"),
+      ],
+      techStack: ["Next.js", "Serverless Functions", "MongoDB"],
+      features: [
+        "Admin dashboard with analytics",
+        "Real-time inventory management",
+        "User authentication and authorization",
+        "Responsive design for mobile and desktop"
+      ],
       footerLink: [
         {
           name: "Visit Website",
           url: "https://asaan-qurbani.vercel.app/"
+        },
+        {
+          name: "View Details",
+          url: "/project/asaanqurbani"
         }
-        //  you can add extra buttons here.
       ]
     },
     {
-      image: require("./assets/images/prodcat.jpeg"),
+      image: require("./assets/images/productcat.png"),
       projectName: "ProductCatalog",
       projectDesc: "An Ecommerce site with user,seller and superadmin side with stock management and analytics.",
+      detailedDesc: "ProductCatalog is a full-featured e-commerce platform with three distinct user roles. It provides comprehensive stock management, sales analytics, and a seamless shopping experience. The platform includes seller tools for managing inventory and a super admin panel for overseeing the entire marketplace.",
+      screenshots: [
+        require("./assets/images/projects/productcatalog/screenshot1.png"),
+        require("./assets/images/projects/productcatalog/screenshot2.png"),
+        require("./assets/images/projects/productcatalog/screenshot3.png"),
+        require("./assets/images/projects/productcatalog/screenshot4.png"),
+        require("./assets/images/projects/productcatalog/screenshot5.png"),
+        require("./assets/images/projects/productcatalog/screenshot6.png"),
+        require("./assets/images/projects/productcatalog/screenshot7.png"),
+        require("./assets/images/projects/productcatalog/screenshot8.png"),
+        require("./assets/images/projects/productcatalog/screenshot9.png"),
+      ],
+      techStack: ["MERN Stack", "Redux", "JWT", "Render"],
+      features: [
+        "Multi-role authentication (User, Seller, SuperAdmin)",
+        "Stock management system",
+        "Sales analytics and reporting",
+        "Secure payment integration"
+      ],
       footerLink: [
         {
           name: "Visit Website",
           url: "https://product-catalog-ybcr.onrender.com/"
+        },
+        {
+          name: "View Details",
+          url: "/project/productcatalog"
         }
       ]
+    },
+    {
+      image: require("./assets/images/gsap-practice.png"),
+      projectName: "Live Streaming Practice",
+      projectDesc: "A creative GSAP practice project with custom animations and scroll interactions.",
+      detailedDesc:
+        "This project was built from scratch to experiment with GSAP animations and scroll-triggered interactions. The site is fully responsive and demonstrates creative layout design without relying on Figma or pre-made designs. It showcases dynamic animations, interactive elements, and smooth transitions.",
+      screenshots: [
+        require("./assets/images/projects/gsappractice/screenshot1.png"),
+        require("./assets/images/projects/gsappractice/screenshot2.png"),
+        require("./assets/images/projects/gsappractice/screenshot3.png"),
+      ],
+      techStack: ["React.js", "GSAP", "CSS3", "Responsive Design"],
+      features: [
+        "Scroll-triggered animations using GSAP",
+        "Fully responsive layout",
+        "Interactive elements with hover effects",
+        "Creative design built without Figma",
+      ],
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://live-streaming-website.vercel.app/",
+        },
+        {
+          name: "View Details",
+          url: "/project/livestreamingpractice" // ✅ FIXED
+        },
+      ],
+    },
+    {
+      image: require("./assets/images/technologia.png"), // replace with actual image path
+      projectName: "Technologia Replica",
+      projectDesc:
+        "A React-based replica of the Envato premium WordPress theme Technologia and digital otters, built collaboratively using Git and GitHub.",
+      detailedDesc:
+        "This project is a front-end replica of the premium Envato WordPress theme 'Technologia', recreated using React. The goal was to closely match the original design while translating a WordPress theme into a modern component-based React architecture. The project was developed collaboratively using GitHub, focusing on clean UI structure, reusable components, and smooth scroll-based animations powered by AOS.",
+      screenshots: [
+        require("./assets/images/projects/technologia/screenshot1.png"),
+        require("./assets/images/projects/technologia/screenshot2.png"),
+        require("./assets/images/projects/technologia/screenshot3.png"),
+      ],
+      techStack: ["React.js", "AOS Animations", "SCSS", "Git", "GitHub"],
+      features: [
+        "Pixel-inspired replica of Envato Technologia theme",
+        "Component-based React architecture",
+        "Scroll animations using AOS",
+        "Collaborative development with GitHub",
+        "Responsive layout across devices",
+      ],
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://software-company-eight.vercel.app/",
+        },
+        {
+          name: "View Details",
+          url: "/project/technologiareplica", // ✅ matches routing logic
+        },
+      ],
+    },
+    {
+      image: require("./assets/images/dashboard-practice.png"), // replace with actual image
+      projectName: "React Dashboard Practice",
+      projectDesc:
+        "A React-based dashboard built for practice, focusing on layout structure, data visualization, and component composition.",
+      detailedDesc:
+        "This dashboard project was created as a hands-on React practice to understand dashboard layouts, reusable components, and data presentation patterns commonly used in admin panels. The focus was on building a clean and functional interface rather than responsiveness. It includes structured sections, cards, charts, and UI elements typically found in real-world dashboards.",
+      screenshots: [
+        require("./assets/images/projects/dashboardpractice/screenshot1.png"),
+        require("./assets/images/projects/dashboardpractice/screenshot2.png"),
+        require("./assets/images/projects/dashboardpractice/screenshot3.png"),
+      ],
+      techStack: ["React.js", "JavaScript", "CSS", "Component Architecture"],
+      features: [
+        "Dashboard-style layout with cards and sections",
+        "Reusable React components",
+        "Basic data visualization structure",
+        "Focus on desktop layout (non-responsive by design)",
+        "Practice-oriented implementation",
+      ],
+      footerLink: [
+        {
+          name: "Visit Website",
+          url: "https://dashboard-teal-nine-76.vercel.app/",
+        },
+        {
+          name: "View Details",
+          url: "/project/reactdashboardpractice", // ✅ matches slug logic
+        },
+      ],
     }
+
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: true
 };
+
 
 // Achievement Section
 // Include certificates, talks etc
