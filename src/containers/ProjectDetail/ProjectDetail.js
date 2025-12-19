@@ -16,17 +16,34 @@ export default function ProjectDetail() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  // Find the project by converting projectName to URL-friendly format
+    // Find the project by converting projectName to URL-friendly format
   const project = bigProjects.projects.find(
     (p) => p.projectName.toLowerCase().replace(/\s+/g, "") === projectId
   );
+
+  // Tab key screenshot navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!project?.screenshots || project.screenshots.length === 0) return;
+
+      if (e.key === "Tab") {
+        e.preventDefault();
+        setSelectedImage((prev) => (prev + 1) % project.screenshots.length);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [project?.screenshots]);
+
+
 
   if (!project) {
     return (
       <div className={isDark ? "dark-mode" : ""}>
         <div className="error-page">
           <h1 className={isDark ? "dark-mode" : ""}>Project Not Found</h1>
-          <button 
+          <button
             className={isDark ? "dark-mode error-button" : "error-button"}
             onClick={() => navigate("/#projects")}
           >
@@ -39,7 +56,6 @@ export default function ProjectDetail() {
 
   const handleBackClick = () => {
     navigate("/");
-    // Small delay to ensure navigation completes before scrolling
     setTimeout(() => {
       const projectsSection = document.getElementById("projects");
       if (projectsSection) {
@@ -71,7 +87,7 @@ export default function ProjectDetail() {
                 />
               )}
               <div>
-                <h1 className={isDark ? "dark-mode" : ""}>
+                <h1 className={isDark ? "dark-mode project-title" : "project-title"}>
                   {project.projectName}
                 </h1>
                 <p className={isDark ? "dark-mode project-tagline" : "project-tagline"}>
@@ -117,10 +133,7 @@ export default function ProjectDetail() {
                     } ${isDark ? "dark-mode" : ""}`}
                     onClick={() => setSelectedImage(index)}
                   >
-                    <img
-                      src={screenshot}
-                      alt={`Thumbnail ${index + 1}`}
-                    />
+                    <img src={screenshot} alt={`Thumbnail ${index + 1}`} />
                   </div>
                 ))}
               </div>
@@ -141,10 +154,7 @@ export default function ProjectDetail() {
                 <h2>Tech Stack</h2>
                 <div className="tech-tags">
                   {project.techStack.map((tech, i) => (
-                    <span
-                      key={i}
-                      className={isDark ? "dark-mode tech-tag" : "tech-tag"}
-                    >
+                    <span key={i} className={isDark ? "dark-mode tech-tag" : "tech-tag"}>
                       {tech}
                     </span>
                   ))}
