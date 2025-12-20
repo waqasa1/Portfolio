@@ -1,6 +1,7 @@
-// src/containers/Main.js (or wherever your Main component is)
+// src/containers/Main.js
 
 import React, { useEffect, useState, useContext } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "../components/header/Header";
 import Greeting from "./greeting/Greeting";
 import Skills from "./skills/Skills";
@@ -24,25 +25,45 @@ import "./Main.scss";
 
 const Main = () => {
   const { isDark } = useContext(StyleContext);
+  const location = useLocation();
 
-  const [isShowingSplashAnimation, setIsShowingSplashAnimation] = useState(true);
+  // Check if coming from internal navigation (skip splash)
+  const skipSplash = location.state?.scrollTo || sessionStorage.getItem("splashShown") === "true";
+  
+  const [isShowingSplashAnimation, setIsShowingSplashAnimation] = useState(
+    splashScreen.enabled && !skipSplash
+  );
 
   useEffect(() => {
-    if (splashScreen.enabled) {
+    if (splashScreen.enabled && !skipSplash) {
       const splashTimer = setTimeout(() => {
         setIsShowingSplashAnimation(false);
+        sessionStorage.setItem("splashShown", "true"); // Mark splash as shown
       }, splashScreen.duration);
 
       return () => clearTimeout(splashTimer);
     } else {
-      // If splash is disabled, hide it immediately
       setIsShowingSplashAnimation(false);
     }
-  }, []);
+  }, [skipSplash]);
+
+  // Handle scroll to section after navigation from ProjectDetail
+  useEffect(() => {
+    if (location.state?.scrollTo && !isShowingSplashAnimation) {
+      // Wait for components to render
+      const timer = setTimeout(() => {
+        const element = document.getElementById(location.state.scrollTo);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [location.state, isShowingSplashAnimation]);
 
   return (
     <div className={isDark ? "dark-mode" : null}>
-      {/* No StyleProvider here anymore — it's in App.js */}
       {isShowingSplashAnimation && splashScreen.enabled ? (
         <SplashScreen />
       ) : (
