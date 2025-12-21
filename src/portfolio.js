@@ -48,11 +48,11 @@ const skillsSection = {
   subTitle: "CRAZY WEB DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
   skills: [
     emoji(
-      "⚡ Develop highly interactive Front end / User Interfaces for your web applications"
+      "⚡ Develop highly interactive Full Stack Application for your web applications"
     ),
     emoji("⚡ Progressive Web Applications ( PWA ) in normal and SPA Stacks"),
     emoji(
-      "⚡ Integration of third party services such as Firebase/ AOS / GSAP"
+      "⚡ Integration of third party services such as Firebase/ AOS / GSAP / JWT"
     )
   ],
 
@@ -194,7 +194,6 @@ const openSource = {
 
 const bigProjects = {
   title: "Projects",
-  subtitle: "Personal and Work projects",
   projects: [
     {
       image: require("./assets/images/asaanqurbanilogoo.webp"),
