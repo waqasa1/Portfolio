@@ -226,8 +226,8 @@ const bigProjects = {
     {
       image: require("./assets/images/productcat.webp"),
       projectName: "ProductCatalog",
-      projectDesc: "An Ecommerce site with user,seller and superadmin side with stock management and analytics.",
-      detailedDesc: "ProductCatalog is a full-featured e-commerce platform with three distinct user roles. It provides comprehensive stock management, sales analytics, and a seamless shopping experience. The platform includes seller tools for managing inventory and a super admin panel for overseeing the entire marketplace.",
+      projectDesc: "An Ecommerce site with user,seller and superadmin side with stock management, analytics and chat features.",
+      detailedDesc: "ProductCatalog is a multi-vendor e-commerce platform with robust inventory management, analytics, and role-based access for users, sellers, and super admins. It also includes a real-time WebSocket chat system for user-seller communication and admin-managed support conversations.",
       screenshots: [
         require("./assets/images/projects/productcatalog/screenshot1.webp"),
         require("./assets/images/projects/productcatalog/screenshot2.webp"),
@@ -238,6 +238,10 @@ const bigProjects = {
         require("./assets/images/projects/productcatalog/screenshot7.webp"),
         require("./assets/images/projects/productcatalog/screenshot8.webp"),
         require("./assets/images/projects/productcatalog/screenshot9.webp"),
+        require("./assets/images/projects/productcatalog/screenshot10.png"),
+        require("./assets/images/projects/productcatalog/screenshot11.png"),
+
+
       ],
       techStack: ["MERN Stack", "Redux", "JWT", "Render"],
       features: [
