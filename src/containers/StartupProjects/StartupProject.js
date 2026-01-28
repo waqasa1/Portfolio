@@ -49,6 +49,7 @@ export default function StartupProject() {
                   }
                   onClick={(e) => handleCardClick(project, e)}
                 >
+                  {project.isStar && <div className="star-badge">⭐</div>}
                   {project.image ? (
                     <div className="project-image">
                       <img

@@ -266,13 +266,13 @@
       p {
         font-size: 17px;
         line-height: 1.5rem;
-        color: $cardSubtitle;
+        color: #333;
         margin: 0;
         font-family: "Montserrat", sans-serif;
       }
 
       &.dark-mode p {
-        color: $subTitle;
+        color: #e1e1e1;
       }
 
       .tech-tags {
