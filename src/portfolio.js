@@ -228,7 +228,7 @@ const bigProjects = {
       projectName: "ProductCatalog",
       isStar: true,
       projectDesc: "An Ecommerce site with user,seller and superadmin side with stock management, analytics, chat features and logging.",
-      detailedDesc: "ProductCatalog is a multi-vendor e-commerce platform with robust inventory management, analytics, and role-based access for users, sellers, and super admins. It also includes a real-time WebSocket chat system for user-seller communication and admin-managed support conversations. In this project logging has been implemented for better debugging and monitoring.",
+      detailedDesc: "ProductCatalog is a multi-vendor e-commerce platform with robust inventory management, analytics, and role-based access for users, sellers, and super admins. It also includes a real-time WebSocket chat system for user-seller communication and admin-managed support conversations. In this project, I implemented logging using Winston to analyze and fixed queries that were taking more than 500ms and focused on idempotency. Used Redis to cache data to limit database reads as much as possible and for better user experience.",
       screenshots: [
         require("./assets/images/projects/productcatalog/screenshot1.webp"),
         require("./assets/images/projects/productcatalog/screenshot2.webp"),
@@ -249,7 +249,10 @@ const bigProjects = {
         "Multi-role authentication (User, Seller, SuperAdmin)",
         "Stock management system",
         "Sales analytics and reporting",
-        "Secure payment integration"
+        "Secure payment integration",
+        "Winston logging for monitoring and debugging",
+        "Query optimization (<500ms) and idempotency",
+        "Redis caching for improved performance"
       ],
       footerLink: [
         {
